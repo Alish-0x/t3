@@ -4,7 +4,7 @@
 # A unique name for your Worker.
 # This will be part of its URL (e.g., your-worker-name.your-account.workers.dev)
 # Replace "simple-tts-worker" with your desired worker name.
-name = "simple-tts-worker"
+name = "t3"
 
 # The main entry point for your Worker script.
 # If your JavaScript file (from the Canvas) is named `index.js` and is in the root of your project directory:
