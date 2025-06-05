@@ -1,0 +1,43 @@
+# wrangler.toml
+# Configuration file for the Cloudflare Worker (simple_tts_mvp_worker_js_01)
+
+# A unique name for your Worker.
+# This will be part of its URL (e.g., your-worker-name.your-account.workers.dev)
+# Replace "simple-tts-worker" with your desired worker name.
+name = "simple-tts-worker"
+
+# The main entry point for your Worker script.
+# If your JavaScript file (from the Canvas) is named `index.js` and is in the root of your project directory:
+main = "index.js"
+# If your JavaScript file is named `worker.js` in the root:
+# main = "worker.js"
+# If your JavaScript file is in a `src` directory (e.g., `src/index.js`):
+# main = "src/index.js"
+
+# Specifies the compatibility date for the Workers runtime.
+# It's good practice to set this to a recent date you've tested against or the current date.
+# Format: YYYY-MM-DD
+compatibility_date = "2024-06-05"
+
+# --- Environment Variables & Secrets ---
+# Secrets like 'GOOGLE_TTS_API_KEY' MUST be configured in the Cloudflare dashboard
+# under your Worker's settings > Variables > Environment Variables (Secrets).
+# They are not defined directly in this file for security reasons.
+
+# You can define non-secret environment variables here if needed:
+# [vars]
+# MY_NON_SECRET_VARIABLE = "some_value"
+
+# --- Other configurations (optional for this MVP) ---
+# If you were using KV namespaces, Durable Objects, R2 buckets, etc.,
+# you would add their bindings here. For the current script, these are not needed.
+
+# Example for a KV namespace binding (if you were to use one later):
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE" # How you'll access it in your Worker (env.MY_KV_NAMESPACE)
+# id = "your_kv_namespace_id_from_dashboard"
+
+# Example for an R2 bucket binding (if you were to use one later):
+# [[r2_buckets]]
+# binding = "MY_R2_BUCKET" # How you'll access it in your Worker (env.MY_R2_BUCKET)
+# bucket_name = "your-r2-bucket-name"
